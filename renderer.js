@@ -1,4 +1,6 @@
-document.getElementById("form").onsubmit = async function teste() {
-    const resp = await window.service.teste();
+document.getElementById("form").onsubmit = async function (event) {
+    event.preventDefault();
+    const namespace = document.getElementById("namespace").value;
+    const resp = await window.service.getPods(namespace);
     alert(resp);
 };

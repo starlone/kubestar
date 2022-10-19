@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/starlone/kubestar#readme",
   "devDependencies": {
-    "electron": "^21.1.1"
+    "electron": "^21.1.1",
+    "electron-reload": "^2.0.0-alpha.1"
   }
 }
