@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -8,8 +8,14 @@
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <button id="botao">Clica</button>
+    <h1>KubeStar!</h1>
+    <form id="form">
+      <div>
+        <label>Namespace</label>
+        <input name="namespace">
+      </div>
+      <button type="submit">Listar</button>
+    </form>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>
