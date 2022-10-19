@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const kubeservice = require("./kube.service")
 
 require("electron-reload")(__dirname, {
   electron: path.join(__dirname, "node_modules", ".bin", "electron"),
@@ -16,13 +17,13 @@ function createWindow() {
     },
   });
 
-  ipcMain.handle("onGetPods", (_event, namespace) => [namespace]);
+  ipcMain.handle("onGetPods", (_event, namespace) => kubeservice.getPods(namespace));
 
   // and load the index.html of the app.
   mainWindow.loadFile("index.html");
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
