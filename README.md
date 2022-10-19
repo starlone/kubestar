@@ -1,5 +1,7 @@
 # KubeStar
 
+A desktop client for kubernetes powered by electron
+
 ## To Use
 
 ### Install dependencies

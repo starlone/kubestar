@@ -1,7 +1,7 @@
 {
   "name": "kubestar",
-  "version": "1.0.0",
-  "description": "Kubernates client",
+  "version": "0.0.1",
+  "description": "A desktop client for kubernetes powered by electron",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
