@@ -14,10 +14,11 @@
   },
   "homepage": "https://github.com/starlone/kubestar#readme",
   "devDependencies": {
-    "electron": "^21.1.1",
+    "electron": "^22.0.2",
     "electron-reload": "^2.0.0-alpha.1"
   },
   "dependencies": {
-    "@kubernetes/client-node": "^0.17.1"
+    "@kubernetes/client-node": "^0.17.1",
+    "xterm": "^5.1.0"
   }
 }
