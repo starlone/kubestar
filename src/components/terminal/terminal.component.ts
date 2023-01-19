@@ -3,8 +3,6 @@ import { Terminal } from 'xterm';
 
 import html from "./terminal.component.html";
 
-declare global { interface Window { service: any; } }
-
 const term = new Terminal();
 
 export default vue.defineComponent({

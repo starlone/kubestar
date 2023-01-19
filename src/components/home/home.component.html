@@ -59,7 +59,7 @@
             <div><strong>{{cont.name}}</strong></div>
             <div>{{cont.image}}</div>
             <div>
-              <a href="#" class="card-link">Log</a>
+              <a href="#" class="card-link" @click.prevent="showLog">Log</a>
               <a href="#" class="card-link" @click.prevent="showShell">Shell</a>
             </div>
           </li>
@@ -69,3 +69,4 @@
   </div>  
 </main>
 <shell></shell>
+<log></log>

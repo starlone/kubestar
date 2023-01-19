@@ -1,10 +1,11 @@
 import * as vue from 'vue';
 
 import shell from "../../modals/shell/shell.modal";
+import log from "../../modals/log/log.modal";
+
 import html from "./home.component.html";
 
 import { Modal } from 'bootstrap';
-import { ElementTypes } from '@vue/compiler-core';
 
 
 declare global { interface Window { service: any; } }
@@ -21,10 +22,9 @@ function autoRefresh(comp: any) {
 export default vue.defineComponent({
     name: "Hello",
     template: html,
-    components: { shell },
+    components: { shell, log },
     data() {
         autoRefresh(this)
-        console.log(self);
         return {
             namespace: 'nia-triton',
             pods: [],
@@ -33,8 +33,13 @@ export default vue.defineComponent({
         }
     },
     methods: {
-        showShell() { 
+        showShell() {
             const element = document.getElementById('modalShell');
+            const myModal = new Modal(element);
+            myModal.show();
+        },
+        showLog() {
+            const element = document.getElementById('modalLog');
             const myModal = new Modal(element);
             myModal.show();
         },
