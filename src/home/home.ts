@@ -1,8 +1,10 @@
 import * as vue from 'vue';
 
+import html from "./home.html";
+
 export const home = vue.defineComponent({
     name: "Hello",
-    template: "Oi {{message}}",
+    template: html,
     data() {
         return {
             message: "Hello World"
