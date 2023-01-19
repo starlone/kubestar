@@ -6,7 +6,7 @@ kc.loadFromDefault();
 const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
 
 export const kubeService = {
-  getPods: (namespace: string) => {
+  getPods: async (namespace: string) => {
     return k8sApi.listNamespacedPod(namespace).then((res: any) => {
       return res.body;
     });
