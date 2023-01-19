@@ -9,7 +9,32 @@ rules.push({
 }, {
   test: /\.html$/,
   loader: "html-loader",
-});
+},
+  {
+    test: /\.(scss)$/,
+    use: [
+      {
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader'
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          postcssOptions: {
+            plugins: () => [
+              require('autoprefixer')
+            ]
+          }
+        }
+      },
+      {
+        loader: 'sass-loader'
+      }
+    ]
+  }
+);
 
 export const rendererConfig: Configuration = {
   module: {
@@ -17,6 +42,6 @@ export const rendererConfig: Configuration = {
   },
   plugins,
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.html'],
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.html', '.scss'],
   },
 };
