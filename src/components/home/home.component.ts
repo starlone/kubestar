@@ -1,6 +1,11 @@
 import * as vue from 'vue';
 
-import html from "./home.html";
+import shell from "../../modals/shell/shell.modal";
+import html from "./home.component.html";
+
+import { Modal } from 'bootstrap';
+import { ElementTypes } from '@vue/compiler-core';
+
 
 declare global { interface Window { service: any; } }
 
@@ -13,20 +18,26 @@ function autoRefresh(comp: any) {
     }, 10000);
 }
 
-export const home = vue.defineComponent({
+export default vue.defineComponent({
     name: "Hello",
     template: html,
+    components: { shell },
     data() {
         autoRefresh(this)
         console.log(self);
         return {
-            namespace: '',
+            namespace: 'nia-triton',
             pods: [],
             loading: false,
             hasAutorefresh: false,
         }
     },
     methods: {
+        showShell() { 
+            const element = document.getElementById('modalShell');
+            const myModal = new Modal(element);
+            myModal.show();
+        },
         async onSubmit() {
             this.loading = true;
             const resp = await window.service.getPods(this.namespace);

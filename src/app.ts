@@ -1,12 +1,12 @@
 import * as vue from 'vue';
-import { home } from './home/home'
+import home from './components/home/home.component';
 
 
-export const app = vue.createApp({
+export default vue.createApp({
   template: "<home />",
   components: {
-    "home" : home
-  }  
+    "home": home
+  }
 });
 
 

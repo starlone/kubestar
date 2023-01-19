@@ -60,11 +60,12 @@
             <div>{{cont.image}}</div>
             <div>
               <a href="#" class="card-link">Log</a>
-              <a href="#" class="card-link">Shell</a>
+              <a href="#" class="card-link" @click.prevent="showShell">Shell</a>
             </div>
           </li>
         </ul>
       </div>
     </div>
-  </div>
+  </div>  
 </main>
+<shell></shell>
