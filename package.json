@@ -41,6 +41,7 @@
     "typescript": "~4.5.4"
   },
   "dependencies": {
+    "@kubernetes/client-node": "^0.18.0",
     "electron-squirrel-startup": "^1.0.0",
     "vue": "^3.2.45"
   }

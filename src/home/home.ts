@@ -2,20 +2,22 @@ import * as vue from 'vue';
 
 import html from "./home.html";
 
+declare global { interface Window { service: any; } }
+
 export const home = vue.defineComponent({
     name: "Hello",
     template: html,
     data() {
         return {
-            message: "Hello World"
+            namespace: '',
+            pods: []
         }
     },
     methods: {
         async onSubmit() {
-            // const namespace = document.getElementById("namespace").value;
-            // const resp = await window.service.getPods(namespace);
-            // this.pods = resp.items;
-            // console.log(resp.items);
+            const resp = await window.service.getPods(this.namespace);
+            this.pods = resp.items;
+            console.log(resp.items);
         },
     },
 });
