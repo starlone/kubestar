@@ -1,14 +1,11 @@
 import * as vue from 'vue';
-
-import shell from "../../modals/shell/shell.modal";
-import log from "../../modals/log/log.modal";
-
-import html from "./home.component.html";
-
 import { Modal } from 'bootstrap';
 
+import log from "../../modals/log/log.modal";
+import shell from "../../modals/shell/shell.modal";
+import service from '../../service';
 
-declare global { interface Window { service: any; } }
+import html from "./home.component.html";
 
 function autoRefresh(comp: any) {
     setTimeout(() => {
@@ -45,10 +42,10 @@ export default vue.defineComponent({
         },
         async onSubmit() {
             this.loading = true;
-            const resp = await window.service.getPods(this.namespace);
+            const resp = await service.getPods(this.namespace);
             this.loading = false;
             this.pods = resp.items;
             console.log(resp.items);
-        },
+        }
     },
 });

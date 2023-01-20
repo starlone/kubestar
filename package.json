@@ -49,6 +49,7 @@
     "@kubernetes/client-node": "^0.18.0",
     "bootstrap": "^5.2.3",
     "electron-squirrel-startup": "^1.0.0",
+    "node-pty": "^0.10.1",
     "vue": "^3.2.45",
     "xterm": "^5.1.0"
   }

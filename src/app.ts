@@ -1,5 +1,5 @@
 import * as vue from 'vue';
-import home from './components/home/home.component';
+import home from './frontend/components/home/home.component';
 
 
 export default vue.createApp({
@@ -8,5 +8,3 @@ export default vue.createApp({
     "home": home
   }
 });
-
-
